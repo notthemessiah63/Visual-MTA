@@ -5,26 +5,54 @@
     <title>Visual MTA</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-    <script src="jquery-1.7.2.js"></script>
+    <script src="jquery-2.1.4.js"></script>
     <script src="script.js"></script>
   </head>
   <body>
     <div id="content">
       <div id="nav">
-        <div id="logo"><img src="ga.png" /></div>
-        <div id="title">Bank of GA</div>
+        <div id="logo"><img src="mta_info.gif" /></div>
+        <div id="title">Plan your MTA Journey</div>
       </div>
-      <div class="account" id="account1">
-        <div class="balance" id="balance1">$0</div>
-        <input id="amount1" type="text" placeholder="enter an amount" />
-        <input id="deposit1" type="button" value="Deposit" />
-        <input id="withdraw1" type="button" value="Withdraw" />
+      <div class="startJourney" id="journeyFrom">
+        <input id="startLine" type="text" placeholder="enter startLine" />
+        <input id="journeyTo" type="text" placeholder="enter destination station" />
       </div>
-      <div class="account" id="account2">
-        <div class="balance" id="balance2">$0</div>
-        <input id="amount2" type="text" placeholder="enter an amount" />
-        <input id="deposit2" type="button" value="Deposit" />
-        <input id="withdraw2" type="button" value="Withdraw" />
+      <div class="startJourney" id="journeyFrom">
+        <input id="journeyFrom" type="text" placeholder="enter start station" />
+        <input id="journeyTo" type="text" placeholder="enter destination station" />
+      </div>
+      <div>
+        <input id="calcJourney" type="button" value="Get Your Journey" />
+      </div>
+      <div>
+        <ul class='n'>
+          <li>Times Square</li>
+          <li>34th</li>
+          <li>28th</li>
+          <li>23rd</li>
+          <li>Union Square</li>
+          <li>8th</li>
+        </ul>
+      </div>
+      <div>
+        <ul class='l'>
+          <li>8th</li>
+          <li>6th</li>
+          <li>Union Square</li>
+          <li>3rd</li>
+          <li>1st</li>
+        </ul>
+      </div>
+      <div>
+        <ul class='s'>
+          <li>Grand Central</li>
+          <li>33rd</li>
+          <li>28th</li>
+          <li>23rd</li>
+          <li>Union Square</li>
+          <li>Astor Place</li>
+        </ul>
       </div>
       <div class="clear"></div>
     </div>
