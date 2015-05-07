@@ -1,11 +1,17 @@
 //Only when all of the HTML is loaded, call the initialize function;
 $(document).ready(function(){
+  //-------------- added vars  -----------
+    // var startTrain = "";
+    // var endLin = "";
+    // var stStn = "";
+    // var endStn = "";
+  // ----------end of added vars ---------
     var mta = {
       'n': ['ts', '34th', '28th-n', '23rd-n', 'us', '8th-n'],
       'l': ['8th-l', '6th', 'us', '3rd', '1st'],
       's': ['gc', '33rd', '28th-s', '23rd-s', 'us', 'ap']
     };
-    
+
     function menu() {
       var response = prompt('Welcome to MTA!!! \n(m)ta or (q)uit');
       while(response !== 'q') {
@@ -16,9 +22,22 @@ $(document).ready(function(){
     }
 
     function getUserInput() {
-      var startTrain = prompt('What train do you want to get on at: \n' + Object.keys(mta).join(', ') + '?');
-      var firstStop = prompt('Which stop: ' + mta[startTrain].join(', '));
+      // var startTrain = prompt('What train do you want to get on at: \n' + Object.keys(mta).join(', ') + '?');
+    $('#calcJourney').click(function(){
+      var startTrain = $('#startTrain').val();
+     console.log("startTrain = "+startTrain);
+      //})
+    //----------------------------------
+    //  var firstStop = prompt('Which stop: ' + mta[startTrain].join(', '));
+      var firstStop = $('#firstStop').val();
+     console.log("firstStop = "+firstStop);
+      })
+    //----------------------------------
       var stopTrain = prompt('What train do you want to get on at: \n' + Object.keys(mta).join(', ') + '?');
+    //-----------------------------------------
+//      var stopTrain = $('#stopTrain').val();
+//     console.log("stopTrain = "+stopTrain);
+    //-----------------------------------------
       var lastStop = prompt('Which stop: ' + mta[stopTrain].join(', '));
       return {startTrain: startTrain, 
               firstStop: firstStop,
