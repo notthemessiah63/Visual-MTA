@@ -15,16 +15,21 @@ $(document).ready(function(){
     function menu() {
   // comment out while loop - we work in click event now
  //     var response = prompt('Welcome to MTA!!! \n(m)ta or (q)uit');
+ // move the listener down around calling function menu()
  //     while(response !== 'q') {
-        var userInput = getUserInput();
+ //     $('#calcJourney').click(function(){
+        //var userInput = getUserInput();
+        var userInput = "m"
         var tripLength = calculateStops(userInput);
         alert('Your trip length is ' + tripLength + ' stops!');
+ //       })
  //     }
     }
 
     function getUserInput() {
       // var startTrain = prompt('What train do you want to get on at: \n' + Object.keys(mta).join(', ') + '?');
-    $('#calcJourney').click(function(){
+    //------ move listener earlier into the program ----
+    //*** $('#calcJourney').click(function(){
       var startTrain = $('#startTrain').val();
      console.log("startTrain = "+startTrain);
       //})
@@ -43,7 +48,7 @@ $(document).ready(function(){
       var lastStop = $('#lastStop').val();
       console.log("lastStop = "+lastStop);
     //---------------------------------------
-    })
+    //---- *** })
       return {startTrain: startTrain, 
               firstStop: firstStop,
               stopTrain: stopTrain,
@@ -73,6 +78,7 @@ $(document).ready(function(){
     function sameLine(userInput) {
       return Math.abs(mta[userInput.startTrain].indexOf(userInput.firstStop) - mta[userInput.stopTrain].indexOf(userInput.lastStop));
     }
-
+    $('#calcJourney').click(function(){
     menu();
+    })
 })
